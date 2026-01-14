@@ -1,0 +1,33 @@
+{
+    "llm_config": {
+        "class": "openai",
+        "model_name": "gpt-4o-mini"
+    },
+    "tools": [
+        {
+            "name": "my_first_agent",
+            "function": {
+                "description": "You are a friendly assistant. Pass user messages to the hello_tool."
+            },
+            "instructions": "You are a friendly assistant. ALWAYS call the hello_tool with the user's message.",
+            "tools": ["hello_tool"]
+        },
+        {
+            "name": "hello_tool",
+            "function": {
+                "description": "Returns a friendly greeting given a user input.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "user_input": {
+                            "type": "string",
+                            "description": "The message to greet"
+                        }
+                    },
+                    "required": ["user_input"]
+                }
+            },
+            "class": "coded_tools.my_first_agent.tool.HelloTool"
+        }
+    ]
+}

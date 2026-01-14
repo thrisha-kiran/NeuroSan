@@ -1,0 +1,17 @@
+{
+    # Define the LLM configuration for this agent
+    "llm_config": {
+        "class": "gemini",
+        "model_name": "gemini-1.5-flash"
+    },
+    "tools": [
+        {
+            "name": "test_agent",
+            "function": {
+                "description": "Gemini powered assistant"
+            },
+            "instructions": "You are a helpful assistant. Always reply clearly.",
+            "tools": []
+        }
+    ]
+}

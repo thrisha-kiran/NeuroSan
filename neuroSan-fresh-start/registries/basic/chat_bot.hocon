@@ -1,0 +1,17 @@
+{
+    # Define the LLM configuration for this agent
+    "llm_config": {
+        "class": "openai",
+        "model_name": "gpt-4o-mini"
+    },
+    "tools": [
+        {
+            "name": "chat_bot",
+            "function": {
+                "description": "You are a friendly AI assistant. Reply clearly and concisely."
+            },
+            "instructions": "You are a friendly AI assistant. Reply clearly and concisely.",
+            "tools": []
+        }
+    ]
+}
